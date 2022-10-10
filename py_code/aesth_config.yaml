@@ -1,0 +1,44 @@
+SHOW_CONFIG : True
+DEBUG_MODE : False
+
+# how often to loop the processes
+REPEAT_STEP_0 : True
+REPEAT_STEP_1 : True
+STEP_0_FREQ : 360      #in minutes
+STEP_1_FREQ : 200     #in minutes
+
+
+# cnn configurations
+AESTHETIC_BOT_DIR : "cnn_models/9.2b"
+
+# evolver configurations
+EVO_ITERATIONS : 250
+EVO_TRIALS : 10
+EVO_POPSIZE : 32
+EVO_MUTATION_RATE : 0.03
+EVO_MU : 0.9
+EVO_DIM_RATE : 0.01
+EVO_FINAL_SEL : "twit_entropy"
+EVO_RANK_TP_SEL : True
+
+# gif exporting (during evolver training)
+EVO_GIF : False
+GIF_DIR : "evo_gifs/"
+GIF_FPS : 7
+GIF_ITER : 10
+
+
+# twitter poll creation
+DB_PAIR_RATE : 0.90     # percent chance to use the user-gen pairing type (1 - RATE = (user-user | gen-gen))
+TWIT_AUTH_FILE : "twit_cred.json"
+TWITTER_POLL_MIN : 180   #180 -> 3 hours | MUST BE GREATER THAN 5
+PAIR_IMG_DIR : "pair_imgs/"
+UNEVAL_USER_MIN : 7
+
+# twitter follow up
+EDITOR_LINK : "http://aesthetic-bot.xyz/"
+TRAIN_AFTER_POLL : True
+UPDATE_BOT_DIR : "cnn_models/9.2b"
+UPDATE_BOT_EPOCH : 10     #how many times to iterate over the dataset and train on
+OVERWRITE_BOT : True      #whether to overwrite the old bot with the updated bot
+MIN_VOTE_REQ : 5
